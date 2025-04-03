@@ -5,24 +5,24 @@ from tkinter import ttk
 root = Tk()
 class GreetingApp:
     def __init__ (self, master):
-        #label for the name
-        self.label1 = ttk.Label(master, text = "Hello!")
-        self.label1.grid()
-        #birthday label
-        self.label1 = ttk.Label(master, text = "Hello!")
-        self.label1.grid()
-        #email label
-        self.label1 = ttk.Label(master, text = "Hello!")
-        self.label1.grid()
-        #phone number label
-        self.label1 = ttk.Label(master, text = "Hello!")
-        self.label1.grid()
-        #address label
-        self.label1 = ttk.Label(master, text = "Hello!")
-        self.label1.grid()
+        #Entry for the name
+        self.entry1 = ttk.Entry(master, text = "Hello!")
+        self.entry1.grid()
+        #birthday Entry
+        self.entry2 = ttk.Entry(master, text = "Hello!")
+        self.entry2.grid()
+        #email Entry
+        self.entry3 = ttk.Entry(master, text = "Hello!")
+        self.entry3.grid()
+        #phone number Entry
+        self.entry4 = ttk.Entry(master, text = "Hello!")
+        self.entry4.grid()
+        #address Entry
+        self.entry5 = ttk.Entry(master, text = "Hello!")
+        self.entry5.grid()
         #dropdown for contact method
-        self.label1 = ttk.Label(master, text = "Hello!")
-        self.label1.grid()
+        self.entry1 = ttk.Combobox(master, text = "Hello!")
+        self.entry1.grid()
         #button to submit the information
         self.btn1 = ttk.Button(master, text="Submit")
         self.btn1.config(command=self.method1)
