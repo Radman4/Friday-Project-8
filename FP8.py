@@ -3,6 +3,7 @@
 from tkinter import *
 from tkinter import ttk
 import sqlite3
+
 #allows connection to the database
 
 root = Tk()
@@ -56,6 +57,15 @@ class GreetingApp:
         #connect to the database
         conn = sqlite3.connect('CustomerInfo.db') 
         cursor = conn.cursor()
+        cursor.execute('''CREATE TABLE IF NOT EXISTS customer_info (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    birthday TEXT NOT NULL,
+    email TEXT NOT NULL,
+    phone TEXT NOT NULL,
+    address TEXT NOT NULL,
+    contact_method TEXT NOT NULL
+)''')
         #this is where the data is inserted into the database
         cursor.execute('''INSERT INTO customer_info 
                        (name, birthday, email, phone, address, contact_method) VALUES (?,?,?,?,?,?);''' ,
