@@ -8,6 +8,7 @@ import sqlite3
 root = Tk()
 class GreetingApp:
     def __init__ (self, master):
+
         frame1 = ttk.Frame(master, height = 200, width=300)
         frame1.pack()
         #Entry for the name
@@ -46,6 +47,20 @@ class GreetingApp:
         self.btn1.grid()
     def method1(self):
         #should be that the DB is given a new set of values
-        print("test")
+        name = self.name.get()
+        bday = self.bday.get()
+        email = self.email.get()
+        phone = self.phone.get()
+        address = self.address.get()
+        contact = self.contact.get()
+        #connect to the database
+        conn = sqlite3.connect('CustomerInfo.db') 
+        cursor = conn.cursor()
+        #this is where the data is inserted into the database
+        cursor.execute('''INSERT INTO customer_info 
+                       (name, birthday, email, phone, address, contact_method) VALUES (?,?,?,?,?,?);''' ,
+                        (name,bday,email,phone,address,contact))
+        conn.commit()
+
 app = GreetingApp(root)
 root.mainloop()
