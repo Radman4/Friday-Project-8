@@ -5,26 +5,28 @@ from tkinter import ttk
 root = Tk()
 class GreetingApp:
     def __init__ (self, master):
+        frame1 = ttk.Frame(master, height = 200, width=300)
+        frame1.pack()
         #Entry for the name
-        self.entry1 = ttk.Entry(master, text = "Hello!")
-        self.entry1.grid()
+        self.name = ttk.Entry(frame1)
+        self.name.grid()
         #birthday Entry
-        self.entry2 = ttk.Entry(master, text = "Hello!")
-        self.entry2.grid()
+        self.bday = ttk.Entry(frame1)
+        self.bday.grid()
         #email Entry
-        self.entry3 = ttk.Entry(master, text = "Hello!")
-        self.entry3.grid()
+        self.email = ttk.Entry(frame1)
+        self.email.grid()
         #phone number Entry
-        self.entry4 = ttk.Entry(master, text = "Hello!")
-        self.entry4.grid()
+        self.phone = ttk.Entry(frame1)
+        self.phone.grid()
         #address Entry
-        self.entry5 = ttk.Entry(master, text = "Hello!")
-        self.entry5.grid()
+        self.address = ttk.Entry(frame1)
+        self.address.grid()
         #dropdown for contact method
-        self.entry1 = ttk.Combobox(master, text = "Hello!")
-        self.entry1.grid()
+        self.contact = ttk.Combobox(frame1, state= "readonly",values = ["Email", "Phone", "Text"])
+        self.contact.grid()
         #button to submit the information
-        self.btn1 = ttk.Button(master, text="Submit")
+        self.btn1 = ttk.Button(frame1, text="Submit")
         self.btn1.config(command=self.method1)
         self.btn1.grid()
     def method1(self):
