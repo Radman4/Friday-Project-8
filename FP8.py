@@ -3,7 +3,6 @@
 from tkinter import *
 from tkinter import ttk
 import sqlite3
-
 #allows connection to the database
 
 root = Tk()
