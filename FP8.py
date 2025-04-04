@@ -2,6 +2,7 @@
 #This is a simple GUI that asks for the user's information before putting it in a Database.
 from tkinter import *
 from tkinter import ttk
+import sqlite3
 #allows connection to the database
 
 root = Tk()
@@ -44,7 +45,7 @@ class GreetingApp:
         self.btn1.config(command=self.method1)
         self.btn1.grid()
     def method1(self):
-        #should be that the sampleDB is given a new set of values
+        #should be that the DB is given a new set of values
         print("test")
 app = GreetingApp(root)
 root.mainloop()
