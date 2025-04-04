@@ -2,6 +2,9 @@
 #This is a simple GUI that asks for the user's information before putting it in a Database.
 from tkinter import *
 from tkinter import ttk
+#allows connection to the database
+import sqlite3
+conn = sqlite3.connect('sampleDB.db')
 root = Tk()
 class GreetingApp:
     def __init__ (self, master):
